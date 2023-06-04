@@ -1,0 +1,39 @@
+FRAME:
+  WIDTH: 360
+  HEIGHT: 120
+
+FPS:
+  TEXT:
+    font: 0
+    fontScale: 1
+    color: [0,0,255]
+    thickness: 4
+  BACKGROUND:
+    color: [255,255,255]
+    padding: 6
+
+BB:
+  BOX:
+    color: [255,0,0]
+    thickness: 2
+  TEXT:
+    font: 0
+    fontScale: 0.75
+    color: [0,255,0]
+    thickness: 2
+  BACKGROUND:
+    color: [255,0,0]
+    padding: 1
+
+RECOGNIZER:
+  crop_img_size: 112
+  data_dir: ./facebank
+  face_padding: 10
+  min_area_scale: 0.02
+  img_size: 112
+  max_training_img: 50
+  ckpt_path: resource/R100_Glint.onnx # R100_MS1MV2, R100_MS1MV3, R100_Glint, R50_MS1MV3, R50_Glint
+
+CLASSIFIER:
+  use_model: ml_model # similarity, ml_model : whether using machine learning model or consine simmilarity
+  threshold: 0.8
